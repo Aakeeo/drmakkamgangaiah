@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-secondary-800;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-all duration-300 inline-flex items-center justify-center font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary-600 px-6 py-3 rounded-lg hover:bg-gray-50 transition-all duration-300 inline-flex items-center justify-center font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border border-primary-100;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold text-secondary-900 mb-4 font-display;
+  }
+
+  .section-subtitle {
+    @apply text-xl text-secondary-600 mb-12;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-primary-600 to-primary-800;
+  }
+
+  .custom-scrollbar {
+    @apply overflow-auto;
+    scrollbar-width: thin;
+    scrollbar-color: #94a3b8 #e2e8f0;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-200 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full hover:bg-gray-500;
+  }
+}
+
+.hero-pattern {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.section-pattern {
+  background-color: #f8fafc;
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+    linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Add smooth transitions between sections */
+section {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+/* Enhanced section spacing */
+section {
+  @apply py-20;
+}
+
+@screen lg {
+  section {
+    @apply py-24;
+  }
+}
